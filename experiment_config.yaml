@@ -1,0 +1,12 @@
+project-key: CDIS
+name: starter_100_100
+
+properties:
+  - key: top_categories
+    value: 100
+  - key: images_per_category
+    value: 100
+  - key: epochs
+    value: 10
+  - key: pipeline_name
+    value: InceptionPipeline

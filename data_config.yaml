@@ -1,0 +1,6 @@
+raw_data_dir: /public/Cdiscount
+meta_data_dir: /public/Cdiscount/meta
+meta_data_processed_dir: /output/project_data/meta_processed
+models_dir: /output/project_data/models
+predictions_dir: /output/project_data/predictions
+submissions_dir: /output/project_data/submissions
