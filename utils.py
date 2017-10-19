@@ -2,11 +2,7 @@ from time import time
 import logging
 
 from keras.callbacks import Callback
-
-try:
-    from deepsense import neptune
-except Exception:
-    pass
+from deepsense import neptune
 
 registered_actions = {}
 registered_pipelines = {}
