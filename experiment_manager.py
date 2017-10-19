@@ -190,7 +190,11 @@ def _extract_meta(args, train=True):
             meta.append(row)
             offset += length
 
-        meta_df = pd.DataFrame(data=meta, columns=['_id', 'category_id', 'offset', 'length', 'num_pictures'])
+        if train:
+            meta_df = pd.DataFrame(data=meta, columns=['_id', 'category_id', 'offset', 'length', 'num_pictures'])
+        else:
+            meta_df = pd.DataFrame(data=meta, columns=['_id', 'offset', 'length', 'num_pictures'])
+
         meta_df.to_csv(meta_data_filepath, index=False)
 
 
