@@ -1,4 +1,4 @@
-neptune send experiment_manager.py \
+neptune send run_manager.py \
 --config experiment_config.yaml \
 --pip-requirements-file requirements.txt \
 --project-key CDIS \

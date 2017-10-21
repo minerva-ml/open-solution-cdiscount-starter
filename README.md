@@ -32,7 +32,7 @@ Now, you are ready to run the code and train some models...
 You can run this end-to-end solution in two ways:
 + If you wish to work on your own machine you can run
    ```bash
-   neptune run experiment_manager.py -- run_pipeline
+   neptune run run_manager.py -- run_pipeline
    ```
 + Deploying on cloud via [neptune](https://neptune.ml "Machine Learning Lab") is super easy
   + just go
@@ -42,7 +42,7 @@ You can run this end-to-end solution in two ways:
 
   + more advanced option is to run
     ```bash
-    neptune send experiment_manager.py \
+    neptune send run_manager.py \
     --config experiment_config.yaml \
     --pip-requirements-file neptune_requirements.txt \
     --project-key CDIS \
@@ -91,7 +91,7 @@ We give you an option to run this code without neptune. The transition is seamle
 
 1. run python code
    ```bash
-     python experiment_manager.py run_pipeline
+     python run_manager.py run_pipeline
    ```
 
 # Final remarks
