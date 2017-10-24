@@ -94,22 +94,17 @@ class KerasDataLoader(BaseEstimator, TransformerMixin):
             flow_args = {'target_size': self.target_size,
                          'batch_size': self.batch_size,
                          'shuffle': True}
-        y = self._prep_targets(y)
+
         X_flow, X_steps = build_bson_datagen(X, y, img_dataset_filepath, datagen_args, flow_args)
         if validation_data is not None:
             X_valid, y_valid = validation_data
-            y_valid = self._prep_targets(y_valid)
             valid_flow, valid_steps = build_bson_datagen(X_valid, y_valid, img_dataset_filepath, datagen_args,
-                                                          flow_args)
+                                                         flow_args)
         else:
             valid_flow, valid_steps = None, None
 
         return {'X': (X_flow, X_steps),
                 'valid': (valid_flow, valid_steps)}
-
-    def _prep_targets(self, y):
-        targets = to_categorical(np.array(y), num_classes=self.num_classes)
-        return targets
 
 
 def build_bson_datagen(X, y, bson_filepath, datagen_args, flow_args):
@@ -126,8 +121,8 @@ class bsonImageDataGenerator(ImageDataGenerator):
                        target_size=(64, 64), color_mode='rgb', channel_order='tf',
                        batch_size=32, shuffle=True, seed=None):
         return bsonIterator(X, y, bson_filepath, self,
-                             target_size, color_mode, channel_order,
-                             batch_size, shuffle, seed)
+                            target_size, color_mode, channel_order,
+                            batch_size, shuffle, seed)
 
 
 class bsonIterator(Iterator):
@@ -157,7 +152,8 @@ class bsonIterator(Iterator):
         index_array_ = index_array[0]
 
         batch_x = np.zeros((len(index_array_),) + self.image_shape, dtype=K.floatx())
-        batch_y = self.y[index_array_]
+        batch_y_id = self.y[index_array_]
+        batch_y = to_categorical(batch_y_id, num_classes=self.num_classes)
 
         with open(self.bson_filepath, 'rb') as bson_file:
             grayscale = self.color_mode == 'grayscale'
