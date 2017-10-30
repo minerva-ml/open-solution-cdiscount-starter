@@ -66,7 +66,7 @@ predictions_dir: /output/project_data/predictions
 submissions_dir: /output/project_data/submissions
 ```
 
-## meta data creating
+## meta data creation
 If you want to create meta data locally you should run
 ```bash
 python run_manager create_metadata
