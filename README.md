@@ -66,6 +66,13 @@ predictions_dir: /output/project_data/predictions
 submissions_dir: /output/project_data/submissions
 ```
 
+## meta data creating
+If you want to create meta data locally you should run
+```bash
+python run_manager create_metadata
+```
+and your metadata will be stored in the `meta_data_dir`
+
 ## data sampling
 Since the dataset is very large we suggest that you sample training dataset to a manageable size. Something like 1000 most common categories and 1000 images per category seems reasonable to start with. Nevertheless, You can tweak it however you want in the `experiment_config.yaml` file
 ```yaml
