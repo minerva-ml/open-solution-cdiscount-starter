@@ -126,7 +126,7 @@ class bsonImageDataGenerator(ImageDataGenerator):
 	def flow_from_bson(self, X, y, bson_filepath, num_classes,
 	                   target_size=(64, 64), color_mode='rgb', channel_order='tf',
 	                   batch_size=32, shuffle=True, seed=None):
-		return bsonIterator(X, y, bson_filepath, self,
+		return bsonIterator(X, y, bson_filepath, num_classes, self,
 		                    target_size, color_mode, channel_order,
 		                    batch_size, shuffle, seed)
 
