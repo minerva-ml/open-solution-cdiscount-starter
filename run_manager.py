@@ -217,6 +217,10 @@ def _load_meta_testing(args):
 def _parse_neptune_params(args, query_param):
     params = args.properties
     parsed = [param['value'] for param in params if param['key'] == query_param][0]
+    try:
+        parsed = int([param['value'] for param in params if param['key'] == query_param][0])
+    except:
+        pass
     return parsed
 
 
