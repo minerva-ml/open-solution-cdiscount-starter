@@ -3,9 +3,11 @@ This is ready to use, end-to-end sample solution for the currently running [Kagg
 
 It involves data loading and augmentation, model training (many different architectures), ensembling and submit generator.
 
-# How to run Cdiscount starter?
+## Disclaimer
+In this open source solution you will find references to the neptune.ml. It is free platform for community Users, which we use daily to keep track of our experiments. Please note that using neptune.ml is not necessary to proceed with this solution. You may run it as plain Python script :wink:.
 
-## Installation
+## How to run Cdiscount starter?
+### Installation
 
 1. Install the requirements
    ```bash
@@ -26,7 +28,7 @@ It involves data loading and augmentation, model training (many different archit
 
 Now, you are ready to run the code and train some models...
 
-## Run code
+### Run code
 **remark about the competition data**: We have uploaded the data to the [neptune](https://neptune.ml "Machine Learning Lab") platform. It is available in the `/public/cdiscount` directory. Moreover, we created the `meta_data` file for large .bson files in the `/public/Cdiscount/meta` directory. It makes the process way faster.
 
 You can run this end-to-end solution in two ways:
