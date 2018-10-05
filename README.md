@@ -3,6 +3,9 @@ This is ready to use, end-to-end sample solution for the currently running [Kagg
 
 It involves data loading and augmentation, model training (many different architectures), ensembling and submit generator.
 
+## More competitions :sparkler:
+Check collection of [public projects :gift:](https://app.neptune.ml/-/explore), where you can find multiple Kaggle competitions with code, experiments and outputs.
+
 ## Disclaimer
 In this open source solution you will find references to the neptune.ml. It is free platform for community Users, which we use daily to keep track of our experiments. Please note that using neptune.ml is not necessary to proceed with this solution. You may run it as plain Python script :wink:.
 
